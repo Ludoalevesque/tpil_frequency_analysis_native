@@ -10,13 +10,17 @@ export BOLD_ref="${output_dir}/sub-02_task-rest_boldref.nii.gz"
 export ROI_file="${root_dir}/23-07-11_fsl_first/control/sub-pl002_ses-v1/Subcortex_segmentation/sub-pl002_ses-v1_all_fast_firstseg.nii.gz"
 
 
-# ## Register T1 to BOLD
+#Starting docker :
+sudo service docker start
 
-# # with docker and ants container 
-# docker run --rm \
-#     -v "${root_dir}:${root_dir}" \
-#     antsx/ants \
-#     bash antsRegistrationSyNQuick.sh -d 3 -f "$BOLD_ref" -m "$ROI_file" -o "${output_dir}/sub-${sub}_T1_space-BOLD_"
+
+## Register T1 to BOLD
+
+# with docker and ants container 
+docker run --rm \
+    -v "${root_dir}:${root_dir}" \
+    antsx/ants \
+    bash antsRegistrationSyNQuick.sh -d 3 -f "$BOLD_ref" -m "$T1_brain" -o "${output_dir}/sub-${sub}_T1_space-BOLD_"
 
 
 
