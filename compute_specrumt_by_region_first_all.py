@@ -87,7 +87,7 @@ def main(args):
               'R_Hipp',
               'R_Amyg',
               'R_Accu']
-    labels_values=[10,11,12,14,16,17,18,26,49,50,51,52,53,54,58]
+    labels_values=[10,11,12,13,16,17,18,26,49,50,51,52,53,54,58]
     
     seg_file = args.seg_file
     bold_file = args.bold_file

@@ -9,7 +9,6 @@
 #SBATCH --array=1-47
 #SBATCH --output="outputs/slurm-%A_%a.out"
 
-
 root_dir="/home/ludoal/scratch/freq_analysis_data"
 sessions="V1"
 subjectIDs_file="${root_dir}/${sessions}/subjectIDs.txt"
